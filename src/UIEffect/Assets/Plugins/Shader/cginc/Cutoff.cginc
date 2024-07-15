@@ -1,16 +1,28 @@
 #ifndef GRAB_PASS_CUTOFF
 #define GRAB_PASS_CUTOFF
-half4 cutoff(half4 mainTexColor, float invertMainTexColor, half4 color, half4 resultColor)
+
+half4 cutoff(half4 mainTexColor, float useMainTexRGB, half4 color, half4 resultColor)
 {
     resultColor *= color;
-    mainTexColor.rgb = abs(invertMainTexColor - mainTexColor.rgb);
-    half averageColor = (mainTexColor.r + mainTexColor.g + mainTexColor.b) / 3;
+    
+    float useMainTexColor = useMainTexRGB * 2.0 - 1.0;
+
+    half3 invertedColor = 1.0 - mainTexColor.rgb;
+    half3 selectedColor = lerp(mainTexColor.rgb, invertedColor, step(0.5, abs(useMainTexColor)));
+
+    half averageColor = lerp(
+        (selectedColor.r + selectedColor.g + selectedColor.b) / 3.0,
+        1.0,
+        step(useMainTexColor, -0.5)
+    );
+    
     resultColor.a *= averageColor * mainTexColor.a;
 
 #ifdef UNITY_UI_ALPHACLIP
-        clip (resultColor.a - 0.001);
+    clip(resultColor.a - 0.001);
 #endif
 
     return resultColor;
 }
+
 #endif

@@ -7,21 +7,23 @@ namespace AscheLib.UI
 {
     abstract public class UIGrabPassEffectBase : UIEffectBase
     {
-        private enum PriorityColor
+        private enum UseMainColor
         {
-            White,
-            Black,
+            UseNotRGB,
+            UseRGB,
+            UseInvertRGB,
         }
         private const string ParameterName = "_ParameterTexture";
         private const string SystemParameterName = "_SystemParameterTexture";
 
         [SerializeField]
-        private PriorityColor _priorityColor;
+        private UseMainColor _useMainColor;
         [SerializeField]
         private bool _isUseNamedGrabPass = true;
         private bool? _beforeIsUseNamedGrabPass = null;
 
-        protected override bool TargetMaterialChangeConditions {
+        protected override bool TargetMaterialChangeConditions
+        {
             get
             {
                 if(base.TargetMaterialChangeConditions || BeforeIsUseNamedGrabPass != _isUseNamedGrabPass)
@@ -50,10 +52,21 @@ namespace AscheLib.UI
                 return _beforeIsUseNamedGrabPass.Value;
             }
         }
-        private float InvertMainTexColor
-            => _priorityColor == PriorityColor.White ? 0 : 1;
+        private float UseMainColorParameter()
+        {
+            switch(_useMainColor)
+            {
+                case UseMainColor.UseNotRGB:
+                    return 0;
+                case UseMainColor.UseRGB:
+                    return 0.5f;
+                case UseMainColor.UseInvertRGB:
+                    return 1;
+            }
+            return 0.5f;
+        }
 
         protected override Color GetSystemParameterColor()
-            => new Color(InvertMainTexColor, 0, 0, 0);
+            => new Color(UseMainColorParameter(), 0, 0, 0);
     }
 }

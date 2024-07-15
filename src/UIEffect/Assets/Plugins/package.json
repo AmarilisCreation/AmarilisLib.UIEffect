@@ -1,6 +1,6 @@
 {
   "name": "com.amariliscreation.uieffect",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "AmarilisLib UIEffect",
   "description": "UIEffect is a library for implementing UI that applies effects to previously rendered graphics",
   "unity": "2020.3",

@@ -15,7 +15,8 @@ Find the manifest.json file in the Packages folder of your project and edit it t
 ## Using for UIEffect
 Base
 
-  <img width="869" alt="BaseImage" src="https://github.com/user-attachments/assets/72ac1e06-f9be-4848-aaf0-6dc08234d093">
+  <img width="556" alt="BaseImage" src="https://github.com/user-attachments/assets/b37cfde3-2a6b-4914-8159-faa12728d2bf">
+
 
 1. Create Image
 
@@ -23,7 +24,8 @@ Base
 
 2. Attach effect component
 
-  <img width="570" alt="Attach effect component" src="https://github.com/user-attachments/assets/f606bf4d-5117-476e-b1cd-4776515a241b">
+  <img width="569" alt="Attach effect component" src="https://github.com/user-attachments/assets/fd8303d9-81c8-461b-bc42-67dc4bf2b4d4">
+
 
 3. Done
 

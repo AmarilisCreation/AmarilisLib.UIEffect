@@ -51,8 +51,9 @@ half4 frag_x(v2f IN, UNITY_VPOS_TYPE vpos : VPOS) : SV_Target
     resultColor += getXShiftedColor(vpos, factor, 0.12, -2.0);
     resultColor += getXShiftedColor(vpos, factor, 0.09, -3.0);
     resultColor += getXShiftedColor(vpos, factor, 0.05, -4.0);
+    resultColor *= IN.color;
 
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 half4 getYShiftedColor(float4 vpos, float param, float weight, float shiftY) : SV_Target
 {
@@ -77,8 +78,9 @@ half4 frag_y(v2f IN, UNITY_VPOS_TYPE vpos : VPOS) : SV_Target
     resultColor += getYShiftedColor(vpos, factor, 0.12, -2.0);
     resultColor += getYShiftedColor(vpos, factor, 0.09, -3.0);
     resultColor += getYShiftedColor(vpos, factor, 0.05, -4.0);
+    resultColor *= IN.color;
 
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 
 #endif

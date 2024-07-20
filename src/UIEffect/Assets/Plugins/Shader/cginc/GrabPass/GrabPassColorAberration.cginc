@@ -19,7 +19,8 @@ half4 frag(v2f IN) : SV_Target
     resultColor.r = tex2D(_GrabTexture, uvR).r;
     half2 uvG = uvBase * (1.0h - intensity) + 0.5h;
     resultColor.g = tex2D(_GrabTexture, uvG).g;
+    resultColor *= IN.color;
 	
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 #endif

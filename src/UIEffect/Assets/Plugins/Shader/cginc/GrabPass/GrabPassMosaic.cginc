@@ -49,7 +49,8 @@ half4 frag(v2f IN, UNITY_VPOS_TYPE vpos : VPOS) : SV_Target
             tex2D(_GrabTexture, UNITY_PROJ_COORD(leftTopPosition.xy)) +
             tex2D(_GrabTexture, UNITY_PROJ_COORD(rightBottomPosition.xy)) +
             tex2D(_GrabTexture, UNITY_PROJ_COORD(rightTopPosition.xy))) / 4.0;
+    resultColor *= IN.color;
 	
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 #endif

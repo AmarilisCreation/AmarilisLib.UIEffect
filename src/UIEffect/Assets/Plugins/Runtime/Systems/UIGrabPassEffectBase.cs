@@ -13,8 +13,6 @@ namespace AscheLib.UI
             UseRGB,
             UseInvertRGB,
         }
-        private const string ParameterName = "_ParameterTexture";
-        private const string SystemParameterName = "_SystemParameterTexture";
 
         [SerializeField]
         private UseMainColor _useMainColor;

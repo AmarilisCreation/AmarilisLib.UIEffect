@@ -47,9 +47,9 @@ Shader "Hidden/UI/GrabPass/RGBShift"
             CGPROGRAM
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "../cginc/Cutoff.cginc"
-            #include "../cginc/GrabPassCommonVertex.cginc"
-            #include "../cginc/GrabPassRGBShift.cginc"
+            #include "../cginc/Common/Cutoff.cginc"
+            #include "../cginc/GrabPass/GrabPassCommonVertex.cginc"
+            #include "../cginc/GrabPass/GrabPassRGBShift.cginc"
             #pragma vertex vert
             #pragma fragment frag
             ENDCG

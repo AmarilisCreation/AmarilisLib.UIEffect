@@ -47,9 +47,9 @@ Shader "Hidden/UI/GrabPass/Named/InvertColor"
             CGPROGRAM
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "../cginc/Cutoff.cginc"
-            #include "../cginc/GrabPassCommonVertex.cginc"
-            #include "../cginc/GrabPassInvertColor.cginc"
+            #include "../cginc/Common/Cutoff.cginc"
+            #include "../cginc/GrabPass/GrabPassCommonVertex.cginc"
+            #include "../cginc/GrabPass/GrabPassInvertColor.cginc"
             #pragma vertex vert
             #pragma fragment frag
             ENDCG

@@ -32,13 +32,13 @@ namespace AscheLib.UI
             }
         }
         protected virtual bool TargetMaterialChangeConditions { get { return _targetMaterial == null; } }
-        private Material TargetMaterial
+        protected Material TargetMaterial
         {
             get
             {
                 if(TargetMaterialChangeConditions)
                 {
-                    _targetMaterial = new Material(Shader.Find(string.Format(ShaderPath)));
+                    _targetMaterial = new Material(Shader.Find(ShaderPath));
                     _targetMaterial.SetTexture(ParameterName, ParameterTexture);
                     _targetMaterial.SetTexture(SystemParameterName, SystemParameterTexture);
                 }

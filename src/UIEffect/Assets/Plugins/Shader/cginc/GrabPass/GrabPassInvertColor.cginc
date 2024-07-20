@@ -14,7 +14,8 @@ half4 frag(v2f IN) : SV_Target
 
     half4 resultColor = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(IN.grabPos));
     resultColor.rgb = abs(threshold - resultColor.rgb);
+    resultColor *= IN.color;
 
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 #endif

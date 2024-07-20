@@ -48,8 +48,9 @@ half4 frag(v2f IN) : SV_Target
     blurredGlow += tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(IN.grabPos + float4(2 * texelSize.x, 1 * texelSize.y, 0, 0))) * (1.0 / 25.0) * tmp;
     blurredGlow += tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(IN.grabPos + float4(2 * texelSize.x, 2 * texelSize.y, 0, 0))) * (1.0 / 25.0) * tmp;
     resultColor += blurredGlow * strength;
+    resultColor *= IN.color;
 
     // 最終的な色を返す
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 #endif

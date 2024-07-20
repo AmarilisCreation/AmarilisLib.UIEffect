@@ -1,10 +1,8 @@
 #ifndef GRAB_PASS_CUTOFF
 #define GRAB_PASS_CUTOFF
 
-half4 cutoff(half4 mainTexColor, float useMainTexRGB, half4 color, half4 resultColor)
+half4 cutoff(half4 mainTexColor, float useMainTexRGB, half4 resultColor)
 {
-    resultColor *= color;
-    
     float useMainTexColor = useMainTexRGB * 2.0 - 1.0;
 
     half3 invertedColor = 1.0 - mainTexColor.rgb;

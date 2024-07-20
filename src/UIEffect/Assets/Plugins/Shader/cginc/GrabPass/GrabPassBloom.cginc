@@ -19,7 +19,8 @@ half4 frag_extract(v2f IN) : SV_Target
 	
     resultColor *= tmp * strength;
     resultColor += tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(IN.grabPos));
+    resultColor *= IN.color;
 	
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 #endif

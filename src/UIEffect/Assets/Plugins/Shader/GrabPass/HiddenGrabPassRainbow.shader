@@ -47,10 +47,10 @@ Shader "Hidden/UI/GrabPass/Rainbow"
             CGPROGRAM
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "../cginc/Random.cginc"
-            #include "../cginc/Cutoff.cginc"
-            #include "../cginc/GrabPassCommonVertex.cginc"
-            #include "../cginc/GrabPassRainbow.cginc"
+            #include "../cginc/Common/Random.cginc"
+            #include "../cginc/Common/Cutoff.cginc"
+            #include "../cginc/GrabPass/GrabPassCommonVertex.cginc"
+            #include "../cginc/GrabPass/GrabPassRainbow.cginc"
             #pragma vertex vert
             #pragma fragment frag
             ENDCG

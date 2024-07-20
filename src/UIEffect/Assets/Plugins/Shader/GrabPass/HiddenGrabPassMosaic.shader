@@ -47,8 +47,8 @@ Shader "Hidden/UI/GrabPass/Mosaic"
             CGPROGRAM
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "../cginc/Cutoff.cginc"
-            #include "../cginc/GrabPassMosaic.cginc"
+            #include "../cginc/Common/Cutoff.cginc"
+            #include "../cginc/GrabPass/GrabPassMosaic.cginc"
             #pragma vertex vert
             #pragma fragment frag
             ENDCG

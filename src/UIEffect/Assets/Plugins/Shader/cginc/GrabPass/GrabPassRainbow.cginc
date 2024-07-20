@@ -29,7 +29,8 @@ half4 frag(v2f IN) : SV_Target
 
     resultColor.rgb += hueColor;
     resultColor.a = 1.0;
+    resultColor *= IN.color;
 
-    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, IN.color, resultColor);
+    return cutoff(tex2D(_MainTex, IN.texcoord), systemParameter.r, resultColor);
 }
 #endif

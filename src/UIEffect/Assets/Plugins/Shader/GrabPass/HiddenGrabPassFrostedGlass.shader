@@ -47,8 +47,8 @@ Shader "Hidden/UI/GrabPass/FrostedGlass"
             CGPROGRAM
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "../cginc/Cutoff.cginc"
-            #include "../cginc/GrabPassFrostedGlass.cginc"
+            #include "../cginc/Common/Cutoff.cginc"
+            #include "../cginc/GrabPass/GrabPassFrostedGlass.cginc"
             #pragma vertex vert
             #pragma fragment frag_x
             ENDCG
@@ -65,8 +65,8 @@ Shader "Hidden/UI/GrabPass/FrostedGlass"
             CGPROGRAM
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
-            #include "../cginc/Cutoff.cginc"
-            #include "../cginc/GrabPassFrostedGlass.cginc"
+            #include "../cginc/Common/Cutoff.cginc"
+            #include "../cginc/GrabPass/GrabPassFrostedGlass.cginc"
             #pragma vertex vert
             #pragma fragment frag_y
             ENDCG

@@ -15,6 +15,7 @@ Shader "Hidden/UI/GrabPass/UVScroll"
 
         _ParameterTexture ("Parameter Texture", 2D) = "white" {}
         _SystemParameterTexture ("System Parameter Texture", 2D) = "white" {}
+        _UVScrollTex("UV Scroll Texture", 2D) = "white" {}
     }
     SubShader
     {

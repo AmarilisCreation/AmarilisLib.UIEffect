@@ -14,7 +14,8 @@ Shader "Hidden/UI/GrabPass/Named/UVScroll"
         [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip ("Use Alpha Clip", Float) = 0
 
         _ParameterTexture ("Parameter Texture", 2D) = "white" {}
-        _SystemParameterTexture ("System Parameter Texture", 2D) = "white" {}
+        _SystemParameterTexture ("System Parameter Texture", 2D) = "white" { }
+        _UVScrollTex("UV Scroll Texture", 2D) = "white" {}
     }
     SubShader
     {

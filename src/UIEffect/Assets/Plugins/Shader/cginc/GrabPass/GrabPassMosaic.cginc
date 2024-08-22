@@ -19,7 +19,7 @@ float4 _GrabTexture_TexelSize;
 sampler2D _MainTex;
 sampler2D _ParameterTexture;
 sampler2D _SystemParameterTexture;
-	
+
 v2f vert(appdata_t IN, out float4 vertex : SV_POSITION)
 {
     v2f OUT;

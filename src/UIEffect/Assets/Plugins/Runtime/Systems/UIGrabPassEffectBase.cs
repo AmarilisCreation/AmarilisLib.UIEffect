@@ -19,6 +19,7 @@ namespace AscheLib.UI
         [SerializeField]
         private bool _isUseNamedGrabPass = true;
         private bool? _beforeIsUseNamedGrabPass = null;
+        Mask mask;
 
         protected override bool TargetMaterialChangeConditions
         {

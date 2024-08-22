@@ -12,6 +12,7 @@ namespace AscheLib.UI
             Sub
         }
         [SerializeField][Range(0, 360)] private float _rotationAngle = 0;
+        [SerializeField][Range(0, 1)] private float _scroll = 0;
         [SerializeField][Range(0, 1)] private float _strength = 0;
         [SerializeField] private BlendType _blendType = BlendType.Add;
         [SerializeField] private Texture _scrollTargetTexture;
@@ -19,6 +20,11 @@ namespace AscheLib.UI
         {
             get { return _rotationAngle; }
             set { _rotationAngle = value; SetDirty(); }
+        }
+        public float Scroll
+        {
+            get { return _scroll; }
+            set { _scroll = value; SetDirty(); }
         }
         public float Strength
         {
@@ -40,6 +46,6 @@ namespace AscheLib.UI
         }
 
         protected override Color GetParameterColor()
-            => new Color((_rotationAngle / 360) % 1, _strength % 1, _blendType == BlendType.Add ? 1 : 0, 0);
+            => new Color((_rotationAngle / 360) % 1, _scroll % 1, _strength, _blendType == BlendType.Add ? 1 : 0);
     }
 }
